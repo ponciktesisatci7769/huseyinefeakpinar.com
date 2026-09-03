@@ -8,4 +8,5 @@ pdf: /files/gurcistanprotestolarineanlamageliyor.pdf
 featured: false
 dateLabel: Eylül 2025
 originalLang: tr
+venue: Turkey's Unheard Voices
 ---
