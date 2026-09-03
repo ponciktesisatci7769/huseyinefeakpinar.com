@@ -3,7 +3,7 @@ title: Absence of Evidence /// Not Evidence of Absence
 date: 2026-04-01
 featured: true
 type: poetry
-dateLabel: "2026"
+dateLabel: 1 Nisan 2026
 venue: Dil ve Edebiyat · 208
 externalUrl: https://www.tded.org.tr/tr/dil-ve-edebiyatin-208-sayisi-cikti
 translationKey: absence-of-evidence
