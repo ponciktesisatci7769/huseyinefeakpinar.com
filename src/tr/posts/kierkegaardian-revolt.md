@@ -2,7 +2,7 @@
 title: Her Şeye ve Herkese Rağmen İman Şovalyeliği /// Kierkegaardcı İsyan
 date: 2026-03-02
 type: poetry
-dateLabel: "2026"
+dateLabel: 2 Mart 2026
 venue: Dil ve Edebiyat · 207
 externalUrl: https://www.tded.org.tr/tr/dil-ve-edebiyatin-207-sayisi-cikti
 translationKey: kierkegaardian-revolt
