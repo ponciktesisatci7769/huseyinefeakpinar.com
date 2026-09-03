@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="{{ "/" if lang == "en" else "/tr/" }}">{{ site.name }}</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="nav-toggle-label">{{ t.menu }}</span>
+    </button>
+    <nav class="nav-links" id="site-nav" aria-label="{{ t.menu }}">
+      {%- for item in nav %}
+      <a href="{{ item[lang].url }}"{% if item.key == activeKey %} class="active" aria-current="page"{% endif %}>{{ item[lang].label }}</a>
+      {%- endfor %}
+      <a class="lang-switch" href="{{ altPageUrl }}" lang="{{ "tr" if lang == "en" else "en" }}" title="{{ t.switchLangTitle }}">{{ t.switchLang }}</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,55 @@
+---
+layout: layouts/page.njk
+pageKey: about
+title: About
+eyebrow: About
+heading: Ideas, evidence & institutions.
+intro: I am a second-year IBDP student at ISBL aiming to study Politics, Philosophy and Economics at university.
+description: "About Hüseyin Efe Akpınar — IBDP student at ISBL, writer, researcher, poet and MUN academic leader."
+permalink: /about/index.html
+---
+<section class="section">
+  <div class="container two-col">
+    <div class="prose">
+      <h2>A little about me</h2>
+      <p>I write about scientific methodology, philosophy, economics and contemporary global politics, while also writing and publishing poetry.</p>
+      <p>I currently serve as Chief Publications Officer at Turkey's Unheard Voices. I have previously published in EconomiCAL and GündemX, and my poetry has appeared in Dil ve Edebiyat Dergisi and Olağan Şiir Dergisi.</p>
+      <p>I am also deeply involved in Model United Nations. I served as Secretary-General of the Yeşilköy Anatolian High School MUN Club for a year and currently take on executive roles such as Head of Academy and Head of Crisis at various MUN conferences.</p>
+    </div>
+    <div>
+      <div class="quote">I am particularly interested in the decentralised structure of knowledge, and in exploring to what extent scientific principles can effectively guide the study of human affairs.</div>
+      <div class="cta">
+        <a class="button primary" href="/writing/">Writing</a>
+        <a class="button" href="/mun/">MUN work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Fields of interest</h2>
+      <p class="section-intro">These are not meant as fixed academic labels; they are the questions and traditions I currently return to most often.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Knowledge &amp; Method</h3><p>Epistemology, philosophy of science, scientific methodology, objectivity, evidence and the limits of methods.</p></div>
+      <div class="card"><h3>Politics &amp; Conflict</h3><p>History and contemporary conflict zones, global politics, institutions, legitimacy and political crises.</p></div>
+      <div class="card"><h3>Economics</h3><p>Macroeconomics, expectations, monetary policy and the relationship between institutions and economic behaviour.</p></div>
+      <div class="card"><h3>Literature &amp; Religion</h3><p>Modern Turkish literature, poetry and religious studies, especially where ideas and human experience intersect.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Contact</h2></div>
+    <p class="section-intro">
+      {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a> · {% endif %}
+      <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>
+      {% if site.social.instagram %} · <a href="{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram ↗</a>{% endif %}
+      {% if site.social.x %} · <a href="{{ site.social.x }}" target="_blank" rel="noopener">X ↗</a>{% endif %}
+      {% if site.social.substack %} · <a href="{{ site.social.substack }}" target="_blank" rel="noopener">Substack ↗</a>{% endif %}
+    </p>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+---
+{%- set t = i18n[lang] -%}
+{%- set twin = translationKey | translationOf(lang, collections) -%}
+{%- set navItem = nav | navFor(type | typeToNav) -%}
+<article class="container article">
+  <div class="page-hero">
+    <div class="eyebrow">{{ venue if venue else navItem[lang].label }}</div>
+    <h1>{{ title }}</h1>
+    <p class="article-meta">
+      <time datetime="{{ page.date | isoDate }}">{{ dateLabel if dateLabel else (page.date | prettyDate(lang)) }}</time>
+      {%- if venue %} · {{ t.publishedIn }} {{ venue }}{% endif -%}
+    </p>
+  </div>
+
+  {% if originalLang and originalLang != lang %}
+  <p class="notice">{{ t.foreignNote }}</p>
+  {% endif %}
+
+  {# The summary is the archive-list teaser; show it here only when the entry
+     has no body of its own, so short records do not read twice. #}
+  {% if summary and not (content | trim) %}<p class="lede">{{ summary }}</p>{% endif %}
+
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+
+  <div class="cta">
+    {% if externalUrl %}<a class="button primary" href="{{ externalUrl }}" target="_blank" rel="noopener">{{ t.openExternal }} ↗</a>{% endif %}
+    {% if pdf %}<a class="button" href="{{ pdf }}" download>{{ t.downloadPdf }}</a>{% endif %}
+    {% if twin %}<a class="button" href="{{ twin.url }}">{{ t.translationAvailable }}</a>{% endif %}
+  </div>
+
+  <p class="back-link"><a href="{{ navItem[lang].url }}">← {{ t.backTo }} {{ navItem[lang].label }}</a></p>
+</article>

@@ -1,0 +1,48 @@
+---
+layout: layouts/page.njk
+pageKey: cv
+title: CV
+eyebrow: Özgeçmiş
+heading: Kısa bir akademik profil.
+intro: Bu web özgeçmişi, deneyim ve yayınlar arttıkça güncel kalacak biçimde tasarlandı.
+description: "Hüseyin Efe Akpınar'ın özgeçmişi — eğitim, yayınlar, liderlik ve MUN deneyimi."
+bodyClass: cv-page
+permalink: /tr/cv/index.html
+---
+<div class="cta container no-print">
+  {% if "cv-tr.pdf" in files %}<a class="button primary" href="/files/cv-tr.pdf" download>{{ i18n[lang].downloadCv }}</a>{% endif %}
+  <button class="button" type="button" data-print>{{ i18n[lang].printCv }}</button>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card"><div class="meta">Eğitim</div><h3>ISBL · IBDP</h3><p>İkinci yıl Uluslararası Bakalorya Diploma Programı öğrencisi.</p></div>
+      <div class="card"><div class="meta">Akademik yön</div><h3>Siyaset, Felsefe ve Ekonomi</h3><p>Üniversitede PPE okumayı hedefliyor; araştırma olanakları ve akademik değişim programlarıyla ilgileniyor.</p></div>
+      <div class="card"><div class="meta">Liderlik</div><h3>Yayın Direktörü · Turkey's Unheard Voices</h3><p>Araştırma temelli içerikte yayın ve editoryal liderlik.</p></div>
+      <div class="card"><div class="meta">MUN</div><h3>Head of Crisis · SOBILMUN</h3><p>2026–27 akademik yılı için kriz komitesi ve kriz ekibi çalışmalarını yürütüyor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Seçilmiş deneyim</h2></div>
+    <div class="list">
+      <div class="list-item"><div class="year">2026</div><div><h3>Co-Under-Secretary-General · MUNAPAC'26</h3><p>Parlamento Italiano.</p></div></div>
+      <div class="list-item"><div class="year">2026</div><div><h3>Co-Under Secretary-General · AMALMUN'26</h3><p>Specialized Crisis.</p></div></div>
+      <div class="list-item"><div class="year">2025–26</div><div><h3>Ekonomi Eş-Moderatörü · VefaCAL'25</h3><p>Vefa Sosyal Bilimler Kulübü.</p></div></div>
+      <div class="list-item"><div class="year">Önceki</div><div><h3>Genel Sekreter · Yeşilköy Anadolu Lisesi MUN Kulübü</h3><p>Bir yıllık görev süresi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Yayınlar</h2></div>
+    <div class="grid grid-2">
+      <div class="card"><h3>EconomiCAL</h3><p>“Amerika'da Ralli mi Geliyor?” ve diğer ekonomi yazıları.</p></div>
+      <div class="card"><h3>Dil ve Edebiyat · Olağan Şiir</h3><p>Farklı sayılarda yayımlanmış şiirler.</p></div>
+    </div>
+  </div>
+</section>

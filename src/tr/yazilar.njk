@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+pageKey: writing
+title: Yazılar
+eyebrow: Yazılar
+heading: Denemeler ve yayımlanmış yazılar.
+intro: Ağırlıklı olarak bilimsel yöntem, felsefe, ekonomi ve güncel dünya siyaseti üzerine yazıyorum. Bu sayfa, o çalışmaların uzun vadeli arşivi olarak tasarlandı.
+description: "Hüseyin Efe Akpınar'ın ekonomi, felsefe ve dünya siyaseti üzerine denemeleri ve yayımlanmış yazıları."
+permalink: /tr/yazilar/index.html
+---
+{%- import "partials/macros.njk" as m -%}
+<section class="section">
+  <div class="container">
+    {{ m.archiveList(collections.posts_tr | archive(collections.posts_en, "essay"), lang, i18n[lang]) }}
+  </div>
+</section>

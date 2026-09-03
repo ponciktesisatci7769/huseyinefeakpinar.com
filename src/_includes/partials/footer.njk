@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© <span data-year>{{ site.buildYear }}</span> {{ site.name }}</div>
+    <div class="footer-links">
+      {%- if site.email %}<a href="mailto:{{ site.email }}">{{ t.email }}</a>{% endif -%}
+      {%- if site.social.linkedin %}<a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">{{ t.linkedin }}</a>{% endif -%}
+      {%- if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="noopener">{{ t.instagram }}</a>{% endif -%}
+      {%- if site.social.x %}<a href="{{ site.social.x }}" target="_blank" rel="noopener">{{ t.x }}</a>{% endif -%}
+      {%- if site.social.substack %}<a href="{{ site.social.substack }}" target="_blank" rel="noopener">{{ t.substack }}</a>{% endif -%}
+    </div>
+  </div>
+</footer>

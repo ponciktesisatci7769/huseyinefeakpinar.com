@@ -1,0 +1,72 @@
+---
+layout: layouts/base.njk
+pageKey: home
+title: Ana Sayfa
+metaTitle: "Hüseyin Efe Akpınar — Siyaset, Felsefe, Ekonomi ve Edebiyat"
+description: "Hüseyin Efe Akpınar — ISBL'de IBDP öğrencisi, PPE adayı, yazar, şair ve MUN akademik ekip yöneticisi. Yayımlanmış yazı, araştırma ve şiir arşivi."
+permalink: /tr/index.html
+---
+{%- set t = i18n[lang] -%}
+<section class="hero container">
+  <div>
+    <div class="eyebrow">Siyaset · Felsefe · Ekonomi · Edebiyat</div>
+    <h1>Hüseyin Efe Akpınar</h1>
+    <p class="lede">ISBL'de IBDP öğrencisiyim ve üniversitede Siyaset, Felsefe ve Ekonomi okumayı hedefliyorum. Bilgi, kurumlar, çatışma ve insan ilişkileri üzerine yazıyor, araştırıyor, yayımlıyor ve Model Birleşmiş Milletler çalışmaları yürütüyorum.</p>
+    <div class="cta">
+      <a class="button primary" href="/tr/yazilar/">Yazılarımı oku</a>
+      <a class="button" href="/tr/hakkimda/">Hakkımda</a>
+    </div>
+  </div>
+  <div class="mantra">“Özellikle bilginin merkezsiz yapısıyla ve bilimsel ilkelerin insan ilişkileri incelemesine ne ölçüde yol gösterebileceğiyle ilgileniyorum.”</div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Seçilmiş çalışmalar</h2>
+      <p class="section-intro">Akademik ve yaratıcı ilgi alanlarımı biçimlendiren yazı ve yayınlardan küçük bir seçki.</p>
+    </div>
+    <div class="grid grid-3">
+      {%- for post in collections.posts_tr | featured(3) %}
+      <a class="card" href="{{ post.url }}">
+        <div class="meta">{{ post.data.venue if post.data.venue else post.data.type }}</div>
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.summary }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Ne yapıyorum</h2>
+      <p class="section-intro">Kamuya açık çalışmalarım şu anda araştırma, yayıncılık, MUN ve edebiyatın kesiştiği yerde duruyor.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="meta">Yayıncılık</div>
+        <h3>Yayın Direktörü · Turkey's Unheard Voices</h3>
+        <p>Siyaset, ekonomi ve toplumsal meseleler etrafında editoryal ve yayın çalışmaları yürütüyorum.</p>
+      </div>
+      <div class="card">
+        <div class="meta">MUN Liderliği</div>
+        <h3>Head of Crisis · SOBILMUN</h3>
+        <p>2026–27 akademik yılı için kriz komitelerini ve kriz ekibini tasarlıyor ve yönetiyorum; birinci yıl üyelerine atölyeler veriyorum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>İlgi alanları</h2>
+      <p class="section-intro">Felsefe, siyaset, ekonomi ve edebiyat boyunca tekrar tekrar döndüğüm sorular.</p>
+    </div>
+    <div class="tags">
+      <span class="tag">Epistemoloji</span><span class="tag">Bilim Felsefesi</span><span class="tag">Güncel Çatışmalar</span><span class="tag">Makroekonomi</span><span class="tag">Modern Türk Edebiyatı</span><span class="tag">Şiir</span><span class="tag">Dinler Tarihi</span>
+    </div>
+  </div>
+</section>

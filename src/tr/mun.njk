@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+pageKey: mun
+title: MUN
+eyebrow: Model Birleşmiş Milletler
+heading: Akademik çalışma, kriz ve liderlik.
+intro: MUN, hitabet, kurumsal düşünme, araştırma ve simülasyon tasarımını bir araya getirdiğim alan.
+description: "Hüseyin Efe Akpınar'ın Model Birleşmiş Milletler liderlik ve akademik çalışmaları."
+permalink: /tr/mun/index.html
+---
+{%- import "partials/macros.njk" as m -%}
+<section class="section">
+  <div class="container">
+    {{ m.archiveList(collections.posts_tr | archive(collections.posts_en, "mun"), lang, i18n[lang]) }}
+  </div>
+</section>

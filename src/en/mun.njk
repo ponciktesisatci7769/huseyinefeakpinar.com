@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+pageKey: mun
+title: MUN
+eyebrow: Model United Nations
+heading: Academic work, crisis & leadership.
+intro: MUN is where I combine public speaking, institutional thinking, research and simulation design.
+description: "Model United Nations leadership and academic work by Hüseyin Efe Akpınar."
+permalink: /mun/index.html
+---
+{%- import "partials/macros.njk" as m -%}
+<section class="section">
+  <div class="container">
+    {{ m.archiveList(collections.posts_en | archive(collections.posts_tr, "mun"), lang, i18n[lang]) }}
+  </div>
+</section>

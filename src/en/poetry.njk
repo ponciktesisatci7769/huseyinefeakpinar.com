@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+pageKey: poetry
+title: Poetry
+eyebrow: Poetry
+heading: Poetry as another way of thinking.
+intro: I write and publish poetry alongside my academic and research interests. Selected work has appeared in Dil ve Edebiyat Dergisi and Olağan Şiir Dergisi.
+description: "Published poetry by Hüseyin Efe Akpınar in Dil ve Edebiyat Dergisi and Olağan Şiir Dergisi."
+permalink: /poetry/index.html
+---
+{%- import "partials/macros.njk" as m -%}
+<section class="section">
+  <div class="container">
+    {{ m.archiveList(collections.posts_en | archive(collections.posts_tr, "poetry"), lang, i18n[lang]) }}
+  </div>
+</section>

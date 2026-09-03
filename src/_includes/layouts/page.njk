@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+{%- set t = i18n[lang] -%}
+<section class="page-hero container">
+  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
+  <h1>{{ heading if heading else title }}</h1>
+  {% if intro %}<p class="lede">{{ intro }}</p>{% endif %}
+</section>
+{{ content | safe }}

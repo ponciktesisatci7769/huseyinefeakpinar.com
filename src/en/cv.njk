@@ -1,0 +1,48 @@
+---
+layout: layouts/page.njk
+pageKey: cv
+title: CV
+eyebrow: Curriculum Vitae
+heading: A concise academic profile.
+intro: This web CV is designed to stay current as experience and publications grow.
+description: "Curriculum vitae of Hüseyin Efe Akpınar — education, publications, leadership and MUN experience."
+bodyClass: cv-page
+permalink: /cv/index.html
+---
+<div class="cta container no-print">
+  {% if "cv-en.pdf" in files %}<a class="button primary" href="/files/cv-en.pdf" download>{{ i18n[lang].downloadCv }}</a>{% endif %}
+  <button class="button" type="button" data-print>{{ i18n[lang].printCv }}</button>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card"><div class="meta">Education</div><h3>ISBL · IBDP</h3><p>Second-year International Baccalaureate Diploma Programme student.</p></div>
+      <div class="card"><div class="meta">Academic direction</div><h3>Politics, Philosophy &amp; Economics</h3><p>Aiming to study PPE at university; interested in research opportunities and academic exchange programs.</p></div>
+      <div class="card"><div class="meta">Leadership</div><h3>Chief Publications Officer · Turkey's Unheard Voices</h3><p>Publication and editorial leadership across research-driven content.</p></div>
+      <div class="card"><div class="meta">MUN</div><h3>Head of Crisis · SOBILMUN</h3><p>Leads crisis committee and crisis-team work for the 2026–27 academic year.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Selected experience</h2></div>
+    <div class="list">
+      <div class="list-item"><div class="year">2026</div><div><h3>Co-Under-Secretary-General · MUNAPAC'26</h3><p>Parlamento Italiano.</p></div></div>
+      <div class="list-item"><div class="year">2026</div><div><h3>Co-Under Secretary-General · AMALMUN'26</h3><p>Specialized Crisis.</p></div></div>
+      <div class="list-item"><div class="year">2025–26</div><div><h3>Economy Co-Moderator · VefaCAL'25</h3><p>Vefa Social Sciences Club.</p></div></div>
+      <div class="list-item"><div class="year">Former</div><div><h3>Secretary-General · Yeşilköy Anatolian High School MUN Club</h3><p>One-year term.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Publications</h2></div>
+    <div class="grid grid-2">
+      <div class="card"><h3>EconomiCAL</h3><p>“Amerika'da Ralli mi Geliyor?” and other economics writing.</p></div>
+      <div class="card"><h3>Dil ve Edebiyat · Olağan Şiir</h3><p>Published poetry across multiple issues.</p></div>
+    </div>
+  </div>
+</section>

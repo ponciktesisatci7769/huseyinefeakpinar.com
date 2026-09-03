@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+pageKey: writing
+title: Writing
+eyebrow: Writing
+heading: Essays & published pieces.
+intro: I write primarily about scientific methodology, philosophy, economics and contemporary global politics. This page is the long-term archive of that work.
+description: "Essays and published writing by Hüseyin Efe Akpınar on economics, philosophy and global politics."
+permalink: /writing/index.html
+---
+{%- import "partials/macros.njk" as m -%}
+<section class="section">
+  <div class="container">
+    {{ m.archiveList(collections.posts_en | archive(collections.posts_tr, "essay"), lang, i18n[lang]) }}
+  </div>
+</section>

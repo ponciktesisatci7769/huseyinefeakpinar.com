@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+pageKey: poetry
+title: Şiir
+eyebrow: Şiir
+heading: Başka bir düşünme biçimi olarak şiir.
+intro: Akademik ve araştırma ilgilerimin yanında şiir yazıyor ve yayımlıyorum. Seçilmiş çalışmalarım Dil ve Edebiyat Dergisi ile Olağan Şiir Dergisi'nde yayımlandı.
+description: "Hüseyin Efe Akpınar'ın Dil ve Edebiyat Dergisi ve Olağan Şiir Dergisi'nde yayımlanan şiirleri."
+permalink: /tr/siir/index.html
+---
+{%- import "partials/macros.njk" as m -%}
+<section class="section">
+  <div class="container">
+    {{ m.archiveList(collections.posts_tr | archive(collections.posts_en, "poetry"), lang, i18n[lang]) }}
+  </div>
+</section>

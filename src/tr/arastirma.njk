@@ -1,0 +1,28 @@
+---
+layout: layouts/page.njk
+pageKey: research
+title: Araştırma
+eyebrow: Araştırma
+heading: Cevaplardan önce sorular.
+intro: Araştırma ilgim epistemoloji, bilim felsefesi, bilimsel yöntem, dünya siyaseti, çatışma ve ekonomi ekseninde yoğunlaşıyor.
+description: "Hüseyin Efe Akpınar'ın araştırma ilgi alanları ve yayımlanmış araştırmaları."
+permalink: /tr/arastirma/index.html
+---
+{%- import "partials/macros.njk" as m -%}
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Yayımlanmış araştırmalar</h2></div>
+    {{ m.archiveList(collections.posts_tr | archive(collections.posts_en, "research"), lang, i18n[lang]) }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container prose">
+    <h2>Güncel sorular</h2>
+    <p>Bilgi ne kadar merkezsizdir? Bir yöntemi bilimsel yapan nedir? Bilimsel ilkeler insan ilişkileri incelemesine nerede anlamlı biçimde yol gösterebilir, bu benzetme nerede kopar?</p>
+    <p>Siyaset tarafında ise kurumların teşvikleri nasıl biçimlendirdiğiyle, krizlerin siyasi aktörler için nasıl okunabilir hâle geldiğiyle ve bazı çatışmaların neden sürerken bazılarının dönüştüğüyle ilgileniyorum.</p>
+    <h2>Gelecek araştırma arşivi</h2>
+    <p>Bu bölüm zamanla bağımsız denemelerin, ortak projelerin, konferans çalışmalarının ve — mümkün olduğunda — akademik araştırmaların kaydına dönüşecek.</p>
+    <p class="notice">Araştırma projeleri bilinçli olarak yalnızca paylaşılacak somut bir çıktı olduğunda listeleniyor.</p>
+  </div>
+</section>

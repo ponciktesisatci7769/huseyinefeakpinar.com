@@ -1,0 +1,73 @@
+---
+layout: layouts/base.njk
+pageKey: home
+title: Home
+metaTitle: "Hüseyin Efe Akpınar — Politics, Philosophy, Economics & Literature"
+description: "Hüseyin Efe Akpınar — IBDP student at ISBL, PPE aspirant, writer, poet and MUN academic leader. An archive of published writing, research and poetry."
+permalink: /index.html
+---
+{%- import "partials/macros.njk" as m -%}
+{%- set t = i18n[lang] -%}
+<section class="hero container">
+  <div>
+    <div class="eyebrow">Politics · Philosophy · Economics · Literature</div>
+    <h1>Hüseyin Efe Akpınar</h1>
+    <p class="lede">IBDP student at ISBL, aspiring to study Politics, Philosophy and Economics. I write, research, publish and work in Model United Nations around questions of knowledge, institutions, conflict and human affairs.</p>
+    <div class="cta">
+      <a class="button primary" href="/writing/">Read my writing</a>
+      <a class="button" href="/about/">About me</a>
+    </div>
+  </div>
+  <div class="mantra">“Particularly interested in the decentralised structure of knowledge, and in exploring to what extent scientific principles can effectively guide the study of human affairs.”</div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <p class="section-intro">A small selection of the writing and publications that shape my academic and creative interests.</p>
+    </div>
+    <div class="grid grid-3">
+      {%- for post in collections.posts_en | featured(3) %}
+      <a class="card" href="{{ post.url }}">
+        <div class="meta">{{ post.data.venue if post.data.venue else post.data.type }}</div>
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.summary }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>What I do</h2>
+      <p class="section-intro">My public work currently sits at the intersection of research, publication, MUN and literature.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="meta">Publication</div>
+        <h3>Chief Publications Officer · Turkey's Unheard Voices</h3>
+        <p>Working on editorial and publication activity around politics, economics and social issues.</p>
+      </div>
+      <div class="card">
+        <div class="meta">MUN Leadership</div>
+        <h3>Head of Crisis · SOBILMUN</h3>
+        <p>Designing and overseeing crisis committees and the crisis team for the 2026–27 academic year, with workshops for first-year members.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Fields of interest</h2>
+      <p class="section-intro">Questions I keep returning to across philosophy, politics, economics and literature.</p>
+    </div>
+    <div class="tags">
+      <span class="tag">Epistemology</span><span class="tag">Philosophy of Science</span><span class="tag">Contemporary Conflict</span><span class="tag">Macroeconomics</span><span class="tag">Modern Turkish Literature</span><span class="tag">Poetry</span><span class="tag">Religious Studies</span>
+    </div>
+  </div>
+</section>

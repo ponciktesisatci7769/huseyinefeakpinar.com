@@ -1,0 +1,55 @@
+---
+layout: layouts/page.njk
+pageKey: about
+title: Hakkımda
+eyebrow: Hakkımda
+heading: Fikirler, kanıtlar ve kurumlar.
+intro: ISBL'de ikinci yıl IBDP öğrencisiyim ve üniversitede Siyaset, Felsefe ve Ekonomi okumayı hedefliyorum.
+description: "Hüseyin Efe Akpınar hakkında — ISBL'de IBDP öğrencisi, yazar, araştırmacı, şair ve MUN akademik ekip yöneticisi."
+permalink: /tr/hakkimda/index.html
+---
+<section class="section">
+  <div class="container two-col">
+    <div class="prose">
+      <h2>Kısaca ben</h2>
+      <p>Bilimsel yöntem, felsefe, ekonomi ve güncel dünya siyaseti üzerine yazıyor; bunun yanında şiir yazıp yayımlıyorum.</p>
+      <p>Şu anda Turkey's Unheard Voices bünyesinde Yayın Direktörü olarak görev yapıyorum. Daha önce EconomiCAL ve GündemX'te yazılarım yayımlandı; şiirlerim Dil ve Edebiyat Dergisi ile Olağan Şiir Dergisi'nde yer aldı.</p>
+      <p>Model Birleşmiş Milletler çalışmalarının da içindeyim. Bir yıl boyunca Yeşilköy Anadolu Lisesi MUN Kulübü'nde Genel Sekreterlik yaptım; hâlen çeşitli MUN konferanslarında Head of Academy ve Head of Crisis gibi yürütücü görevler üstleniyorum.</p>
+    </div>
+    <div>
+      <div class="quote">Özellikle bilginin merkezsiz yapısıyla ve bilimsel ilkelerin insan ilişkileri incelemesine ne ölçüde yol gösterebileceğiyle ilgileniyorum.</div>
+      <div class="cta">
+        <a class="button primary" href="/tr/yazilar/">Yazılar</a>
+        <a class="button" href="/tr/mun/">MUN çalışmaları</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>İlgi alanları</h2>
+      <p class="section-intro">Bunlar sabit akademik etiketler değil; şu anda en sık döndüğüm sorular ve gelenekler.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Bilgi ve Yöntem</h3><p>Epistemoloji, bilim felsefesi, bilimsel yöntem, nesnellik, kanıt ve yöntemlerin sınırları.</p></div>
+      <div class="card"><h3>Siyaset ve Çatışma</h3><p>Tarih ve güncel çatışma bölgeleri, dünya siyaseti, kurumlar, meşruiyet ve siyasi krizler.</p></div>
+      <div class="card"><h3>Ekonomi</h3><p>Makroekonomi, beklentiler, para politikası ve kurumlarla iktisadi davranış arasındaki ilişki.</p></div>
+      <div class="card"><h3>Edebiyat ve Din</h3><p>Modern Türk edebiyatı, şiir ve dinler tarihi; özellikle fikirlerle insan deneyiminin kesiştiği yerde.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>İletişim</h2></div>
+    <p class="section-intro">
+      {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a> · {% endif %}
+      <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>
+      {% if site.social.instagram %} · <a href="{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram ↗</a>{% endif %}
+      {% if site.social.x %} · <a href="{{ site.social.x }}" target="_blank" rel="noopener">X ↗</a>{% endif %}
+      {% if site.social.substack %} · <a href="{{ site.social.substack }}" target="_blank" rel="noopener">Substack ↗</a>{% endif %}
+    </p>
+  </div>
+</section>

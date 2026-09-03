@@ -1,0 +1,49 @@
+{%- set pageTitle = metaTitle if metaTitle else (title + " — " + site.name) -%}
+{%- set pageDesc = description if description else summary -%}
+{%- set canonical = page.url | absoluteUrl(site.url) -%}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDesc }}">
+  <link rel="canonical" href="{{ canonical }}">
+  <link rel="alternate" hreflang="{{ lang }}" href="{{ canonical }}">
+  <link rel="alternate" hreflang="{{ "tr" if lang == "en" else "en" }}" href="{{ altPageUrl | absoluteUrl(site.url) }}">
+  <link rel="alternate" hreflang="x-default" href="{{ "/" | absoluteUrl(site.url) }}">
+  <meta property="og:type" content="{{ "article" if type else "website" }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="{{ "en_GB" if lang == "en" else "tr_TR" }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDesc }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDesc }}">
+  <script type="application/ld+json">
+  {%- if type -%}
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ "ScholarlyArticle" if type == "research" else "BlogPosting" }}",
+    "headline": {{ title | dump | safe }},
+    "inLanguage": "{{ lang }}",
+    "datePublished": "{{ page.date | isoDate }}",
+    "url": "{{ canonical }}",
+    {% if summary %}"description": {{ summary | dump | safe }},{% endif %}
+    "author": { "@type": "Person", "name": {{ site.name | dump | safe }}, "url": "{{ site.url }}" }
+  }
+  {%- else -%}
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.name | dump | safe }},
+    "url": "{{ site.url }}",
+    "jobTitle": "IBDP student",
+    "knowsAbout": ["Politics", "Philosophy", "Economics", "Literature", "Epistemology"]
+    {%- if site.social.linkedin %},
+    "sameAs": [
+      "{{ site.social.linkedin }}"
+      {%- if site.social.instagram %}, "{{ site.social.instagram }}"{% endif -%}
+      {%- if site.social.x %}, "{{ site.social.x }}"{% endif -%}
+      {%- if site.social.substack %}, "{{ site.social.substack }}"{% endif -%}
+    ]
+    {%- endif %}
+  }
+  {%- endif -%}
+  </script>

@@ -1,0 +1,21 @@
+{%- set t = i18n[lang] -%}
+{%- set altPageUrl = pageKey | altUrl(translationKey, lang, nav, collections) -%}
+{%- set activeKey = pageKey if pageKey else (type | typeToNav) -%}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include "partials/seo.njk" %}
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">{{ t.skipToContent }}</a>
+{% include "partials/header.njk" %}
+<main id="main">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+<script src="/js/main.js"></script>
+</body>
+</html>

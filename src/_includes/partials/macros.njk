@@ -1,0 +1,26 @@
+{% macro archiveItem(entry, lang, t) %}
+{%- set post = entry.post -%}
+<article class="list-item{% if entry.foreign %} is-foreign{% endif %}">
+  <div class="year"><time datetime="{{ post.date | isoDate }}">{{ post | displayDate(lang) }}</time></div>
+  <div>
+    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    {% if post.data.venue %}<p class="small">{{ post.data.venue }}</p>{% endif %}
+    {% if post.data.summary %}<p>{{ post.data.summary }}</p>{% endif %}
+    <p class="item-links">
+      {% if entry.foreign %}<span class="badge">{{ t.foreignBadge }}</span>{% endif %}
+      {% if post.data.externalUrl %}<a href="{{ post.data.externalUrl }}" target="_blank" rel="noopener">{{ post.data.venue if post.data.venue else t.openExternal }} ↗</a>{% endif %}
+      {% if post.data.pdf %}<a href="{{ post.data.pdf }}" download>{{ t.downloadPdf }}</a>{% endif %}
+    </p>
+  </div>
+</article>
+{% endmacro %}
+
+{% macro archiveList(entries, lang, t) %}
+{% if entries.length %}
+<div class="list">
+  {%- for entry in entries %}{{ archiveItem(entry, lang, t) }}{% endfor -%}
+</div>
+{% else %}
+<p class="notice">{{ t.emptyArchive }}</p>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,9 @@
+[
+  { "key": "home",     "en": { "url": "/",           "label": "Home" },     "tr": { "url": "/tr/",           "label": "Ana Sayfa" } },
+  { "key": "about",    "en": { "url": "/about/",     "label": "About" },    "tr": { "url": "/tr/hakkimda/",  "label": "Hakkımda" } },
+  { "key": "writing",  "en": { "url": "/writing/",   "label": "Writing" },  "tr": { "url": "/tr/yazilar/",   "label": "Yazılar" } },
+  { "key": "research", "en": { "url": "/research/",  "label": "Research" }, "tr": { "url": "/tr/arastirma/", "label": "Araştırma" } },
+  { "key": "mun",      "en": { "url": "/mun/",       "label": "MUN" },      "tr": { "url": "/tr/mun/",       "label": "MUN" } },
+  { "key": "poetry",   "en": { "url": "/poetry/",    "label": "Poetry" },   "tr": { "url": "/tr/siir/",      "label": "Şiir" } },
+  { "key": "cv",       "en": { "url": "/cv/",        "label": "CV" },       "tr": { "url": "/tr/cv/",        "label": "CV" } }
+]
