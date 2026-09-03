@@ -11,7 +11,7 @@ kaydediyorsun. Telefondan da çalışır.
 ## İlk giriş (bir kez)
 
 1. https://app.pagescms.org adresine git.
-2. **Sign in with GitHub** butonuna bas ve GitHub hesabınla giriş yap.
+2. **Sign in with GitHub** butonuna bas ve `ponciktesisatci7769` hesabınla giriş yap.
 3. Karşına depo listesi gelir; `huseyinefeakpinar.com` deposunu seç.
 
 Bundan sonra her girişte doğrudan panele düşersin.
