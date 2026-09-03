@@ -1,0 +1,168 @@
+# Pages CMS yapılandırması — app.pagescms.org
+# Bu dosya, siteyi yöneten görsel panelin neyi nasıl göstereceğini belirler.
+# Panelde yapılan her değişiklik doğrudan bu depoya kaydedilir ve site
+# GitHub Actions tarafından kendiliğinden yeniden yayınlanır.
+
+media:
+  input: src/files
+  output: /files
+  rename: safe
+
+content:
+  # ---------------------------------------------------------------- Yazılar
+  - name: posts_tr
+    label: Yazılar (Türkçe)
+    type: collection
+    path: src/tr/posts
+    filename: "{primary}.md"
+    exclude: ["posts.json"]
+    view:
+      primary: title
+      sort: date
+      order: desc
+      fields: [title, type, date]
+    fields: &post_fields
+      - name: title
+        label: Başlık
+        type: string
+        required: true
+
+      - name: date
+        label: Tarih
+        type: date
+        required: true
+        description: Yazının sıralamada kullanılacağı tarih.
+        options:
+          format: yyyy-MM-dd
+
+      - name: type
+        label: Bölüm
+        type: select
+        required: true
+        description: Yazının sitede hangi sayfada listeleneceğini belirler.
+        options:
+          values:
+            - name: essay
+              label: Yazılar (deneme)
+            - name: research
+              label: Araştırma
+            - name: poetry
+              label: Şiir
+            - name: mun
+              label: MUN
+
+      - name: summary
+        label: Kısa özet
+        type: text
+        required: true
+        description: Liste sayfalarında ve Google sonuçlarında görünecek tek cümle.
+
+      - name: body
+        label: Metin
+        type: rich-text
+        description: >-
+          Yazının tam metni. Sadece başka bir dergide yayımlanmış bir çalışmanın
+          kaydını tutuyorsanız burayı boş bırakabilirsiniz; o zaman sayfada
+          yukarıdaki özet görünür.
+
+      - name: venue
+        label: Yayımlandığı yer
+        type: string
+        description: "Örnek: EconomiCAL, Dil ve Edebiyat · 208. Yoksa boş bırakın."
+
+      - name: externalUrl
+        label: Yayının dış bağlantısı
+        type: string
+        description: Yazı başka bir sitede yayımlandıysa oraya giden adres.
+
+      - name: pdf
+        label: PDF dosyası
+        type: file
+        description: Varsa PDF'i buraya sürükleyin; sayfada indirme bağlantısı çıkar.
+
+      - name: featured
+        label: Ana sayfada öne çıkar
+        type: boolean
+        default: false
+        description: İşaretlenen yazılar ana sayfadaki "Seçilmiş çalışmalar" bölümünde görünür.
+
+      - name: dateLabel
+        label: Tarih yerine yazılacak metin
+        type: string
+        description: >-
+          Kesin tarih yoksa ekranda bunun yerine bu yazar. Örnek: 2026, Sürüyor,
+          2026–27. Boş bırakırsanız tarih normal biçimde gösterilir.
+
+      - name: translationKey
+        label: Çeviri anahtarı
+        type: string
+        description: >-
+          Aynı çalışmanın Türkçe ve İngilizce kaydını birbirine bağlar. İki dosyaya
+          da aynı kısa etiketi yazın (örnek: gurcistan-protestolari). Çevirisi yoksa
+          boş bırakın.
+
+      - name: originalLang
+        label: Çalışmanın asıl dili
+        type: select
+        description: >-
+          Çalışma başka bir dilde yayımlandıysa seçin. Diğer dilin sayfasında
+          "Türkçe olarak yayımlandı" rozetiyle görünür.
+        options:
+          values:
+            - name: tr
+              label: Türkçe
+            - name: en
+              label: İngilizce
+
+  - name: posts_en
+    label: Yazılar (İngilizce)
+    type: collection
+    path: src/en/posts
+    filename: "{primary}.md"
+    exclude: ["posts.json"]
+    view:
+      primary: title
+      sort: date
+      order: desc
+      fields: [title, type, date]
+    fields: *post_fields
+
+  # ------------------------------------------------- Sosyal medya ve iletişim
+  - name: settings
+    label: Sosyal medya ve iletişim
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - name: name
+        label: Ad soyad
+        type: string
+      - name: url
+        label: Site adresi
+        type: string
+        description: Değiştirmeniz gerekmez.
+      - name: email
+        label: İletişim e-postası
+        type: string
+        description: Boş bırakılırsa sitede hiç görünmez.
+      - name: social
+        label: Sosyal medya hesapları
+        type: object
+        description: Boş bıraktığınız hesap sitede hiç görünmez.
+        fields:
+          - name: linkedin
+            label: LinkedIn adresi
+            type: string
+          - name: instagram
+            label: Instagram adresi
+            type: string
+          - name: x
+            label: X (Twitter) adresi
+            type: string
+          - name: substack
+            label: Substack adresi
+            type: string
+
+settings:
+  content:
+    merge: true

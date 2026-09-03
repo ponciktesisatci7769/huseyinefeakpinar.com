@@ -22,6 +22,28 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("navFor", (nav, key) => nav.find((n) => n.key === key));
 
+  // Post URLs are built from the title rather than the filename, so the address
+  // stays clean no matter what the CMS names the file. Turkish letters are
+  // mapped the Turkish way (ü -> u, not ue) and the slug is capped so a long
+  // headline does not become an unreadable address.
+  const TR_LETTERS = {
+    ı: "i", İ: "i", ş: "s", Ş: "s", ğ: "g", Ğ: "g",
+    ü: "u", Ü: "u", ö: "o", Ö: "o", ç: "c", Ç: "c",
+  };
+  eleventyConfig.addFilter("postSlug", (value) => {
+    const slug = String(value)
+      .replace(/[ıİşŞğĞüÜöÖçÇ]/g, (c) => TR_LETTERS[c])
+      .normalize("NFKD")
+      .replace(/[̀-ͯ]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+    if (slug.length <= 60) return slug;
+    const cut = slug.slice(0, 60);
+    const lastDash = cut.lastIndexOf("-");
+    return lastDash > 30 ? cut.slice(0, lastDash) : cut;
+  });
+
   // The same page in the other language: a sibling nav entry for fixed pages,
   // the matching translationKey for posts, otherwise that language's home.
   eleventyConfig.addFilter(
